@@ -1,0 +1,51 @@
+product_id,product_name,category,price,cost,reorder_level,lead_time_days
+PRD001,Sparkling Mineral Water 1L,Beverages,2.49,1.2,45,3
+PRD002,Cold Brew Coffee 330ml,Beverages,3.99,1.8,40,4
+PRD003,Organic Green Tea 500ml,Beverages,2.29,1.1,35,3
+PRD004,Isotonic Sports Drink 750ml,Beverages,2.79,1.3,30,5
+PRD005,Pressed Orange Juice 1L,Beverages,4.49,2.2,25,2
+PRD006,Almond Milk Unsweetened 1L,Beverages,3.89,1.9,30,4
+PRD007,Craft Ginger Beer 4-Pack,Beverages,6.99,3.5,20,6
+PRD008,Artisan Sourdough Loaf,Food,4.99,2.1,20,2
+PRD009,Roasted Almonds 200g,Food,5.99,3.2,30,5
+PRD010,Dark Chocolate Sea Salt Bar,Food,3.49,1.5,40,4
+PRD011,Gluten-Free Granola 400g,Food,6.79,3.4,25,7
+PRD012,Organic Olive Oil 500ml,Food,11.99,6.2,15,8
+PRD013,Organic Peanut Butter 350g,Food,4.99,2.6,25,5
+PRD014,Sea Salt Potato Crisps 150g,Food,2.49,1.1,50,3
+PRD015,USB-C Braided Cable 2m,Electronics,12.99,3.8,25,10
+PRD016,Wireless Optical Mouse,Electronics,24.99,8.5,15,14
+PRD017,Noise-Isolating Earbuds,Electronics,29.99,12.0,20,12
+PRD018,Fast Wireless Charging Pad,Electronics,22.99,9.5,15,14
+PRD019,Universal Travel Adapter,Electronics,16.99,6.0,20,9
+PRD020,Power Bank 10000mAh,Electronics,27.99,11.5,15,12
+PRD021,Bluetooth Portable Speaker,Electronics,39.99,16.0,10,15
+PRD022,Classic Crewneck T-Shirt White,Clothing,18.0,6.5,30,7
+PRD023,Classic Crewneck T-Shirt Black,Clothing,18.0,6.5,30,7
+PRD024,Slim-Fit Denim Jeans,Clothing,58.0,22.0,20,12
+PRD025,Merino Wool Everyday Socks,Clothing,12.0,4.0,35,6
+PRD026,Cotton Blend Hoodie Grey,Clothing,45.0,18.0,15,10
+PRD027,Lighweight Windbreaker,Clothing,65.0,26.0,12,14
+PRD028,Athletic Running Shorts,Clothing,28.0,11.0,20,8
+PRD029,Canvas Low-Top Sneakers,Footwear,49.99,19.0,15,14
+PRD030,All-Weather Chelsea Boots,Footwear,110.0,42.0,10,21
+PRD031,Cushioned Running Shoes,Footwear,95.0,38.0,15,14
+PRD032,Indoor Comfort Slippers,Footwear,22.0,8.0,20,7
+PRD033,Sport Slide Sandals,Footwear,24.99,9.0,20,7
+PRD034,Leather Dress Loafers,Footwear,125.0,48.0,8,21
+PRD035,Trail Walking Shoes,Footwear,89.99,35.0,12,14
+PRD036,Hydrating Botanical Body Wash,Personal Care,7.99,3.2,25,5
+PRD037,Gentle Daily Face Cleanser,Personal Care,11.5,4.5,20,7
+PRD038,Mineral Sunscreen SPF 50,Personal Care,14.99,6.0,25,7
+PRD039,Natural Deodorant Stick,Personal Care,8.99,3.8,30,5
+PRD040,Moisturizing Shea Lotion,Personal Care,9.99,4.1,20,6
+PRD041,Bamboo Charcoal Toothbrush 2pk,Personal Care,4.99,1.8,40,4
+PRD042,Nourishing Argan Shampoo,Personal Care,12.0,4.8,20,6
+PRD043,Plant-Based Dish Soap 500ml,Household,4.49,1.9,35,4
+PRD044,Microfiber Cleaning Cloths 4pk,Household,5.99,2.2,30,5
+PRD045,All-Purpose Surface Cleaner,Household,4.99,2.1,30,4
+PRD046,Soy Wax Aromatherapy Candle,Household,15.0,5.5,15,8
+PRD047,Recycled Paper Towels 6-Roll,Household,9.99,4.5,25,5
+PRD048,Concentrated Laundry Detergent,Household,16.5,7.0,20,6
+PRD049,Silicone Food Storage Bags,Household,16.99,6.5,15,10
+PRD050,Steel Insulated Water Tumbler,Household,21.99,8.0,15,12

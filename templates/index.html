@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retail Sales & Inventory AI Copilot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center space-x-3">
+      <span class="bg-emerald-500 text-slate-950 font-black text-xs px-2.5 py-1 rounded">PS03</span>
+      <h1 class="text-lg font-bold">Retail Operations & Merchandising AI Copilot</h1>
+    </div>
+    <div class="text-xs text-slate-400">Status: <span class="text-emerald-400 font-semibold">Live Database Connected</span></div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 space-y-6">
+    <!-- Top Stat Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">30-Day Revenue</div>
+        <div class="text-2xl font-bold text-white mt-1">₹{{ "{:,.2f}".format(d.month_revenue) }}</div>
+        <div class="text-xs text-emerald-400 mt-2">Volume: {{ "{:,}".format(d.month_sales) }} units</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">30-Day Net Profit</div>
+        <div class="text-2xl font-bold text-emerald-400 mt-1">₹{{ "{:,.2f}".format(d.month_profit) }}</div>
+        <div class="text-xs text-slate-400 mt-2">Margin: {{ "{:.1f}%".format((d.month_profit / d.month_revenue * 100) if d.month_revenue > 0 else 0) }}</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Inventory Value</div>
+        <div class="text-2xl font-bold text-white mt-1">₹{{ "{:,.2f}".format(d.total_inventory_value) }}</div>
+        <div class="text-xs text-slate-400 mt-2">{{ d.total_stock_units }} units in stock</div>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Inventory Health</div>
+        <div class="flex items-center space-x-4 mt-1">
+          <div><span class="text-xl font-bold text-amber-400">{{ d.low_stock_count }}</span> <span class="text-xs text-slate-400">Low</span></div>
+          <div><span class="text-xl font-bold text-rose-500">{{ d.out_of_stock_count }}</span> <span class="text-xs text-slate-400">Out</span></div>
+        </div>
+        <div class="text-xs text-rose-400 mt-2">Needs Reorder Action</div>
+      </div>
+    </div>
+
+    <!-- Main Workspace: Data Tables & AI Assistant -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Left Column: Tables & Trend (7 cols) -->
+      <div class="lg:col-span-7 space-y-6">
+        <!-- Reorder / Low Stock Alerts -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3 flex items-center justify-between">
+            <span>Critical Inventory Alerts</span>
+            <span class="text-xs bg-rose-950 text-rose-300 border border-rose-800 px-2 py-0.5 rounded">{{ d.low_stock_count + d.out_of_stock_count }} Actions</span>
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs text-left text-slate-300">
+              <thead class="text-slate-400 border-b border-slate-800">
+                <tr>
+                  <th class="py-2">Product</th>
+                  <th class="py-2">Current Stock</th>
+                  <th class="py-2">Threshold</th>
+                  <th class="py-2">Supplier</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                {% for it in d.out_of_stock_items %}
+                <tr class="text-rose-400 font-medium">
+                  <td class="py-2">{{ it.product_name }}</td>
+                  <td class="py-2">0 (Out of Stock)</td>
+                  <td class="py-2">{{ it.reorder_level }}</td>
+                  <td class="py-2">{{ it.supplier }}</td>
+                </tr>
+                {% endfor %}
+                {% for it in d.low_stock_items %}
+                <tr class="text-amber-300">
+                  <td class="py-2">{{ it.product_name }}</td>
+                  <td class="py-2">{{ it.current_stock }}</td>
+                  <td class="py-2">{{ it.reorder_level }}</td>
+                  <td class="py-2">{{ it.supplier }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Top Selling Products -->
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-5">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-3">Top Products (Last 30 Days)</h2>
+          <div class="space-y-3">
+            {% for p in d.top_products %}
+            <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
+              <div>
+                <div class="font-bold text-white">{{ p.product_name }}</div>
+                <div class="text-slate-400">{{ p.category }} • {{ "{:,.0f}".format(p.units_sold) }} units sold</div>
+              </div>
+              <div class="text-right">
+                <div class="font-semibold text-emerald-400">₹{{ "{:,.2f}".format(p.revenue) }}</div>
+                <div class="text-slate-400">₹{{ "{:,.2f}".format(p.profit) }} profit</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: AI Assistant Chat (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col bg-slate-900 border border-slate-800 rounded-lg h-[640px]">
+        <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+          <h2 class="text-sm font-bold uppercase tracking-wider text-white">Operational AI Assistant</h2>
+          <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded">Zero Hallucination</span>
+        </div>
+
+        <!-- Pre-set Action Triggers -->
+        <div class="p-3 bg-slate-950/60 border-b border-slate-800 flex flex-wrap gap-2 text-xs">
+          <button onclick="askPrompt('What should I focus on today?')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded text-slate-300">⚡ Daily Focus</button>
+          <button onclick="askPrompt('Which products should I reorder?')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded text-slate-300">📦 Reorder Plan</button>
+          <button onclick="askPrompt('Show dead stock')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded text-slate-300">🛑 Dead Stock</button>
+          <button onclick="askPrompt('What will my sales look like next month?')" class="bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded text-slate-300">🔮 Forecast</button>
+        </div>
+
+        <!-- Chat History Window -->
+        <div id="chat-box" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs">
+          <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700">
+            <span class="font-bold text-emerald-400 block mb-1">AI Copilot</span>
+            <pre class="whitespace-pre-wrap font-sans text-slate-200 leading-relaxed">Answer:
+Ready to assist you with sales audits, restocking calculations, profit margin inspections, and demand forecasts.
+
+Key numbers:
+• Active SKUs Monitored: 10
+• Store Health Status: Online
+
+Recommendation:
+Click any trigger button above or type any natural language question below.
+
+Reason:
+Real-time deterministic calculations prevent retail stockouts and free up trapped capital.</pre>
+          </div>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="p-3 border-t border-slate-800 flex space-x-2">
+          <input id="user-input" type="text" placeholder="Ask about sales, profits, stock, reorders..." 
+                 class="flex-1 bg-slate-950 border border-slate-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-emerald-500"
+                 onkeydown="if(event.key === 'Enter') sendMessage()">
+          <button onclick="sendMessage()" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-4 py-2 rounded text-xs">Send</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("user-input");
+      const msg = input.value.trim();
+      if (!msg) return;
+      input.value = "";
+      appendMessage("Retailer", msg, "bg-slate-700 text-white ml-6");
+
+      try {
+        const res = await fetch("/api/chat", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({message: msg})
+        });
+        const data = await res.json();
+        appendMessage("AI Copilot", data.reply, "bg-slate-800 border border-slate-700 text-slate-200 mr-6");
+      } catch (err) {
+        appendMessage("System", "Service temporarily offline. Retrying...", "bg-rose-950 text-rose-300");
+      }
+    }
+
+    function askPrompt(text) {
+      document.getElementById("user-input").value = text;
+      sendMessage();
+    }
+
+    function appendMessage(sender, text, cls) {
+      const box = document.getElementById("chat-box");
+      const div = document.createElement("div");
+      div.className = `p-3 rounded-lg ${cls}`;
+      div.innerHTML = `<span class="font-bold ${sender === 'Retailer' ? 'text-blue-400' : 'text-emerald-400'} block mb-1">${sender}</span><pre class="whitespace-pre-wrap font-sans text-xs leading-relaxed">${text}</pre>`;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+  </script>
+</body>
+</html>

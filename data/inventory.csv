@@ -1,0 +1,76 @@
+store_id,product_id,product_name,current_stock,unit_cost,selling_price
+ST01,PRD001,Espresso Dark Roast (1kg),90,650.0,1200.0
+ST02,PRD001,Espresso Dark Roast (1kg),77,650.0,1200.0
+ST03,PRD001,Espresso Dark Roast (1kg),91,650.0,1200.0
+ST01,PRD002,Classic Filter Coffee Powder (500g),10,220.0,450.0
+ST02,PRD002,Classic Filter Coffee Powder (500g),17,220.0,450.0
+ST03,PRD002,Classic Filter Coffee Powder (500g),27,220.0,450.0
+ST01,PRD003,Oat Milk Barista Edition (1L),155,180.0,320.0
+ST02,PRD003,Oat Milk Barista Edition (1L),161,180.0,320.0
+ST03,PRD003,Oat Milk Barista Edition (1L),146,180.0,320.0
+ST01,PRD004,Vanilla Syrup (750ml),2,310.0,580.0
+ST02,PRD004,Vanilla Syrup (750ml),20,310.0,580.0
+ST03,PRD004,Vanilla Syrup (750ml),16,310.0,580.0
+ST01,PRD005,Caramel Drizzle Sauce (1kg),5,340.0,620.0
+ST02,PRD005,Caramel Drizzle Sauce (1kg),18,340.0,620.0
+ST03,PRD005,Caramel Drizzle Sauce (1kg),14,340.0,620.0
+ST01,PRD006,Matcha Green Tea Powder (250g),50,450.0,890.0
+ST02,PRD006,Matcha Green Tea Powder (250g),49,450.0,890.0
+ST03,PRD006,Matcha Green Tea Powder (250g),59,450.0,890.0
+ST01,PRD007,Chai Spice Concentrate (1L),57,190.0,380.0
+ST02,PRD007,Chai Spice Concentrate (1L),74,190.0,380.0
+ST03,PRD007,Chai Spice Concentrate (1L),72,190.0,380.0
+ST01,PRD008,Almond Milk Unsweetened (1L),82,170.0,310.0
+ST02,PRD008,Almond Milk Unsweetened (1L),98,170.0,310.0
+ST03,PRD008,Almond Milk Unsweetened (1L),88,170.0,310.0
+ST01,PRD009,Paper Coffee Cups 250ml (Pack of 100),18,140.0,260.0
+ST02,PRD009,Paper Coffee Cups 250ml (Pack of 100),29,140.0,260.0
+ST03,PRD009,Paper Coffee Cups 250ml (Pack of 100),29,140.0,260.0
+ST01,PRD010,Biodegradable Straws (Pack of 200),72,80.0,180.0
+ST02,PRD010,Biodegradable Straws (Pack of 200),66,80.0,180.0
+ST03,PRD010,Biodegradable Straws (Pack of 200),73,80.0,180.0
+ST01,PRD011,Artisan Sourdough Loaf,12,90.0,220.0
+ST02,PRD011,Artisan Sourdough Loaf,8,90.0,220.0
+ST03,PRD011,Artisan Sourdough Loaf,19,90.0,220.0
+ST01,PRD012,Butter Croissant Pre-baked (Box of 10),40,280.0,550.0
+ST02,PRD012,Butter Croissant Pre-baked (Box of 10),35,280.0,550.0
+ST03,PRD012,Butter Croissant Pre-baked (Box of 10),48,280.0,550.0
+ST01,PRD013,Chocolate Chip Muffin Mix (2kg),7,320.0,600.0
+ST02,PRD013,Chocolate Chip Muffin Mix (2kg),14,320.0,600.0
+ST03,PRD013,Chocolate Chip Muffin Mix (2kg),3,320.0,600.0
+ST01,PRD014,Blueberry Puree (1kg),65,420.0,790.0
+ST02,PRD014,Blueberry Puree (1kg),53,420.0,790.0
+ST03,PRD014,Blueberry Puree (1kg),62,420.0,790.0
+ST01,PRD015,Hazelnut Flavour Drops (500ml),68,280.0,520.0
+ST02,PRD015,Hazelnut Flavour Drops (500ml),73,280.0,520.0
+ST03,PRD015,Hazelnut Flavour Drops (500ml),69,280.0,520.0
+ST01,PRD016,Irish Cream Flavoured Syrup (750ml),39,310.0,580.0
+ST02,PRD016,Irish Cream Flavoured Syrup (750ml),45,310.0,580.0
+ST03,PRD016,Irish Cream Flavoured Syrup (750ml),42,310.0,580.0
+ST01,PRD017,Decaf Columbian Beans (1kg),43,700.0,1350.0
+ST02,PRD017,Decaf Columbian Beans (1kg),44,700.0,1350.0
+ST03,PRD017,Decaf Columbian Beans (1kg),28,700.0,1350.0
+ST01,PRD018,Cranberry Hibiscus Tea (50 bags),23,210.0,420.0
+ST02,PRD018,Cranberry Hibiscus Tea (50 bags),32,210.0,420.0
+ST03,PRD018,Cranberry Hibiscus Tea (50 bags),30,210.0,420.0
+ST01,PRD019,Organic Agave Nectar (500ml),34,260.0,490.0
+ST02,PRD019,Organic Agave Nectar (500ml),44,260.0,490.0
+ST03,PRD019,Organic Agave Nectar (500ml),43,260.0,490.0
+ST01,PRD020,Espresso Machine Descaling Tablets,16,190.0,390.0
+ST02,PRD020,Espresso Machine Descaling Tablets,11,190.0,390.0
+ST03,PRD020,Espresso Machine Descaling Tablets,23,190.0,390.0
+ST01,PRD021,Single Origin Ethiopian Beans (500g),24,480.0,950.0
+ST02,PRD021,Single Origin Ethiopian Beans (500g),20,480.0,950.0
+ST03,PRD021,Single Origin Ethiopian Beans (500g),22,480.0,950.0
+ST01,PRD022,Cold Brew Pitcher Bags (Pack of 10),53,300.0,590.0
+ST02,PRD022,Cold Brew Pitcher Bags (Pack of 10),52,300.0,590.0
+ST03,PRD022,Cold Brew Pitcher Bags (Pack of 10),52,300.0,590.0
+ST01,PRD023,Organic Cocoa Powder (1kg),20,350.0,690.0
+ST02,PRD023,Organic Cocoa Powder (1kg),15,350.0,690.0
+ST03,PRD023,Organic Cocoa Powder (1kg),17,350.0,690.0
+ST01,PRD024,Cinnamon Powder Shaker (200g),68,95.0,190.0
+ST02,PRD024,Cinnamon Powder Shaker (200g),56,95.0,190.0
+ST03,PRD024,Cinnamon Powder Shaker (200g),70,95.0,190.0
+ST01,PRD025,Earl Grey Supreme Loose Leaf (500g),42,380.0,750.0
+ST02,PRD025,Earl Grey Supreme Loose Leaf (500g),36,380.0,750.0
+ST03,PRD025,Earl Grey Supreme Loose Leaf (500g),30,380.0,750.0
